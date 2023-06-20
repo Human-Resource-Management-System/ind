@@ -38,12 +38,12 @@ public class EmploymentInductionDocDAOImpl implements EmploymentInductionDocumen
 
 		ArrayList<EmploymentInductionDocument> al = new ArrayList<>();
 		EmploymentInductionDocument eid = new EmploymentInductionDocument();
-		eid.setDocumentIndex(1);
-		eid.setEmplid(1);
-		eid.setEmplidty(11);
-		eid.setIndcProcessedAusrId(111);
-		eid.setVerified("Yes");
-		al.add(eid);
+		// eid.setDocumentIndex(1);
+		// eid.setEmplid(1);
+		// eid.setEmplidty(11);
+		// eid.setIndcProcessedAusrId(111);
+		// eid.setVerified("Yes");
+		// al.add(eid);
 
 		return al; // (ArrayList<EmploymentInductionDocument>) query.getResultList();
 	}
