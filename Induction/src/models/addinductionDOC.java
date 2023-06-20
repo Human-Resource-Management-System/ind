@@ -1,9 +1,10 @@
 package models;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class addinductionDOC {
-	private int emplid;
 	private int employmentOfferId;
 	private int documentTypeId;
 	private MultipartFile documentData;
@@ -12,14 +13,7 @@ public class addinductionDOC {
 
 	// Getters and setters
 
-	public int getEmplid() {
-		return emplid;
-	}
-
-	public void setEmplid(int emplid) {
-		this.emplid = emplid;
-	}
-
+	@NotNull(message = "employmentOfferId must be provided")
 	public int getEmploymentOfferId() {
 		return employmentOfferId;
 	}
@@ -28,6 +22,7 @@ public class addinductionDOC {
 		this.employmentOfferId = employmentOfferId;
 	}
 
+	@NotNull(message = "documentTypeId must be provided")
 	public int getDocumentTypeId() {
 		return documentTypeId;
 	}
@@ -36,6 +31,7 @@ public class addinductionDOC {
 		this.documentTypeId = documentTypeId;
 	}
 
+	@NotNull(message = "documentData must be provided")
 	public MultipartFile getDocumentData() {
 		return documentData;
 	}
@@ -44,6 +40,7 @@ public class addinductionDOC {
 		this.documentData = documentData;
 	}
 
+	@NotNull(message = "processedUserId must be provided")
 	public int getProcessedUserId() {
 		return processedUserId;
 	}
@@ -52,6 +49,7 @@ public class addinductionDOC {
 		this.processedUserId = processedUserId;
 	}
 
+	@NotNull(message = "verified must be provided")
 	public String getVerified() {
 		return verified;
 	}
@@ -60,18 +58,4 @@ public class addinductionDOC {
 		this.verified = verified;
 	}
 
-	public EmploymentOfferDocument getDocumentType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public adminusers getProcessedUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public HrmsEmploymentOffer getEmploymentOffer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

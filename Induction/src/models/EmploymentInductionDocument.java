@@ -75,28 +75,12 @@ public class EmploymentInductionDocument {
 		this.emplid = emplid;
 	}
 
-	public HrmsEmploymentOffer getEmploymentOffer() {
-		return employmentOffer;
-	}
-
-	public void setEmploymentOffer(HrmsEmploymentOffer employmentOffer) {
-		this.employmentOffer = employmentOffer;
-	}
-
 	public int getEmplidty() {
 		return emplidty;
 	}
 
 	public void setEmplidty(int emplidty) {
 		this.emplidty = emplidty;
-	}
-
-	public EmploymentOfferDocument getDocumentType() {
-		return documentType;
-	}
-
-	public void setDocumentType(EmploymentOfferDocument documentType) {
-		this.documentType = documentType;
 	}
 
 	public byte[] getDocumentData() {
@@ -115,14 +99,6 @@ public class EmploymentInductionDocument {
 		this.indcProcessedAusrId = indcProcessedAusrId;
 	}
 
-	public adminusers getProcessedUser() {
-		return processedUser;
-	}
-
-	public void setProcessedUser(adminusers processedUser) {
-		this.processedUser = processedUser;
-	}
-
 	public String getVerified() {
 		return verified;
 	}
@@ -131,4 +107,27 @@ public class EmploymentInductionDocument {
 		this.verified = verified;
 	}
 
+	public HrmsEmploymentOffer getEmploymentOffer() {
+		return employmentOffer;
+	}
+
+	public void setEmploymentOffer(HrmsEmploymentOffer employmentOffer) {
+		this.employmentOffer = employmentOffer;
+	}
+
+	public EmploymentOfferDocument getDocumentType() {
+		return documentType;
+	}
+
+	public void setDocumentType(EmploymentOfferDocument documentType) {
+		this.documentType = documentType;
+	}
+
+	public adminusers getProcessedUser() {
+		return processedUser;
+	}
+
+	public void setProcessedUser(adminusers processedUser) {
+		this.processedUser = processedUser;
+	}
 }

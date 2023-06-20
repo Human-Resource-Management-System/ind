@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import models.EmploymentInductionDocument;
 
@@ -20,10 +21,12 @@ public class EmploymentInductionDocDAOImpl implements EmploymentInductionDocumen
 	@PersistenceContext
 	private EntityManager entityManager;
 
+	@Transactional
 	public void addEmploymentInductionDocument(EmploymentInductionDocument document) {
 		entityManager.persist(document);
 	}
 
+	@Transactional
 	public EmploymentInductionDocument getEmploymentInductionDocument(int documentIndex) {
 		return entityManager.find(EmploymentInductionDocument.class, documentIndex);
 	}
@@ -32,7 +35,17 @@ public class EmploymentInductionDocDAOImpl implements EmploymentInductionDocumen
 	public ArrayList<EmploymentInductionDocument> getAllDocuments() {
 		String queryString = "SELECT e FROM EmploymentInductionDocument e";
 		Query query = entityManager.createQuery(queryString);
-		return (ArrayList<EmploymentInductionDocument>) query.getResultList();
+
+		ArrayList<EmploymentInductionDocument> al = new ArrayList<>();
+		EmploymentInductionDocument eid = new EmploymentInductionDocument();
+		eid.setDocumentIndex(1);
+		eid.setEmplid(1);
+		eid.setEmplidty(11);
+		eid.setIndcProcessedAusrId(111);
+		eid.setVerified("Yes");
+		al.add(eid);
+
+		return al; // (ArrayList<EmploymentInductionDocument>) query.getResultList();
 	}
 
 }

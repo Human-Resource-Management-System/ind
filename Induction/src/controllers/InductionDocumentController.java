@@ -39,14 +39,12 @@ public class InductionDocumentController {
 	public String addDocument(@ModelAttribute("input") addinductionDOC input) {
 		try {
 
-			document.setEmplid(input.getEmplid());
-			document.setEmploymentOffer(input.getEmploymentOffer());
-			document.setDocumentType(input.getDocumentType());
-			document.setProcessedUser(input.getProcessedUser());
-			document.setVerified(input.getVerified());
-
+			document.setEmplid(input.getEmploymentOfferId());
+			document.setEmplidty(input.getDocumentTypeId());
 			byte[] fileData = input.getDocumentData().getBytes();
 			document.setDocumentData(fileData);
+			document.setIndcProcessedAusrId(input.getProcessedUserId());
+			document.setVerified(input.getVerified());
 
 			docServ.addEmploymentInductionDocument(document);
 		} catch (IOException e) {
